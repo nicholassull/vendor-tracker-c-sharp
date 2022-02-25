@@ -44,12 +44,26 @@ namespace VendorTracker.Tests
         string name01 = "test one";
         string name02 = "test two";
         Vendor newVendor1 = new Vendor(name01);
-        Vendor newVendor2 = new Vendor(name01);
+        Vendor newVendor2 = new Vendor(name02);
         List<Vendor> vendorList = new List<Vendor> {newVendor1, newVendor2};
 
         List<Vendor> result = Vendor.GetAll();
-        
+
         CollectionAssert.AreEqual(vendorList, result);
+      }
+      [TestMethod]
+      public void FindVendor_ReturnsCorrectVendorById_Vendor()
+      {
+        string name01 = "test one";
+        string name02 = "test two";
+        Vendor newVendor1 = new Vendor(name01);
+        Vendor newVendor2 = new Vendor(name02);
+        List<Vendor> vendorList = new List<Vendor> {newVendor1, newVendor2};
+
+        Vendor desiredVendor = newVendor2;
+        Vendor result = Vendor.Find(2);
+
+        Assert.AreEqual(desiredVendor, result);
       }
     
   }
