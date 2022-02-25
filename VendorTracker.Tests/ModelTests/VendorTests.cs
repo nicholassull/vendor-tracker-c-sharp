@@ -5,5 +5,14 @@ using System.Collections.Generic;
 
 namespace VendorTracker.Tests
 {
-
+  [TestClass]
+  public class VendorTests
+  {
+    [TestMethod]
+    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
+    {
+      Vendor newVendor = new Vendor("test Vendor");
+      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+    }
+  }
 }
