@@ -15,14 +15,15 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test Vendor");
+      Vendor newVendor = new Vendor("test Vendor", "test description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
       string name = "test Vendor";
-      Vendor newVendor = new Vendor(name);
+      string description = "test description";
+      Vendor newVendor = new Vendor(name, description);
 
       string result = newVendor.Name;
 
@@ -32,7 +33,8 @@ namespace VendorTracker.Tests
     public void GetId_ReturnsVendorId_Int()
     {
       string name = "test Vendor";
-      Vendor newVendor = new Vendor(name);
+      string description = "test description";
+      Vendor newVendor = new Vendor(name, description);
 
       int result = newVendor.Id;
 
@@ -43,8 +45,10 @@ namespace VendorTracker.Tests
       {
         string name01 = "test one";
         string name02 = "test two";
-        Vendor newVendor1 = new Vendor(name01);
-        Vendor newVendor2 = new Vendor(name02);
+        string description01 = "test description one";
+        string description02 = "test description two";
+        Vendor newVendor1 = new Vendor(name01, description01);
+        Vendor newVendor2 = new Vendor(name02, description02);
         List<Vendor> vendorList = new List<Vendor> {newVendor1, newVendor2};
 
         List<Vendor> result = Vendor.GetAll();
@@ -56,8 +60,10 @@ namespace VendorTracker.Tests
       {
         string name01 = "test one";
         string name02 = "test two";
-        Vendor newVendor1 = new Vendor(name01);
-        Vendor newVendor2 = new Vendor(name02);
+        string description01 = "test description one";
+        string description02 = "test description two";
+        Vendor newVendor1 = new Vendor(name01, description01);
+        Vendor newVendor2 = new Vendor(name02, description02);
         List<Vendor> vendorList = new List<Vendor> {newVendor1, newVendor2};
 
         Vendor desiredVendor = newVendor2;
