@@ -6,8 +6,12 @@ using System.Collections.Generic;
 namespace VendorTracker.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -24,5 +28,16 @@ namespace VendorTracker.Tests
 
       Assert.AreEqual(name, result);
     }
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "test Vendor";
+      Vendor newVendor = new Vendor(name);
+
+      int result = newVendor.Id;
+
+      Assert.AreEqual(1, result);
+    }
+
   }
 }
