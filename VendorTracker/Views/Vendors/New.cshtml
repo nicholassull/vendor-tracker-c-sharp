@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vendor Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    @using VendorTracker.Models
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create Vendor</h1>
+      <div class="text-center m-4">
+        <p>Fill out the form below to add a new vendor to your tracker.</p>
+      </div>
+      <div class="row justify-content-center m-4">
+        <form class="w-50" action="/vendors" method="post">
+          <div class="form-group">
+            <label for="vendorName">Name</label>
+            <input class="form-control" id="vendorName" name="vendorName" type="text">
+          </div>
+          <div class="form-group">
+            <label for="vendorDescription">Description</label>
+            <input class="form-control" id="vendorDescription"  name="vendorDescription" type="text">
+          </div>
+          <button type="submit" class="btn btn-primary">Add Vendor</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
