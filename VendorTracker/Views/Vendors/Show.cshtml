@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vendor Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    @using VendorTracker.Models
+  </head>
+  <body>
+    <div class="container">
+      
+      <h1>Vendor Details</h1>
+      <h3>Vendor: @Model["vendor"].Name</h3>
+      <p>Description: @Model["vendor"].Description</p>
+
+          <div class="row m-4">
+            @foreach (Order order in Model["orders"])
+            {
+              <div class="col-3 m-4">
+                <h5><a href='#'>@order.Title</a></h5>
+                <p><em>Date:</em> @order.Date</p>
+                <p><em>Description:</em> @order.Description</p>
+                <p><em>Payment: </em> $@order.Price</p>
+              </div>
+            }
+          </div>
+        <div class="text-center">
+          <a href='/vendors/@Model["vendor"].Id/orders/new'><button class="btn btn-primary">Add Order</button></a>
+        </div>
+    </div>
+  </body>
+</html>
