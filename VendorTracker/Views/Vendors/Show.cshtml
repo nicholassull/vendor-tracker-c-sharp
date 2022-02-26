@@ -22,7 +22,7 @@
             @foreach (Order order in Model["orders"])
             {
               <div class="col-3 m-4">
-                <h5><a href='#'>@order.Title</a></h5>
+                <h5><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></h5>
                 <p><em>Date:</em> @order.Date</p>
                 <p><em>Description:</em> @order.Description</p>
                 <p><em>Payment: </em> $@order.Price</p>
@@ -31,6 +31,7 @@
           </div>
         <div class="text-center">
           <a href='/vendors/@Model["vendor"].Id/orders/new'><button class="btn btn-primary">Add Order</button></a>
+          <a href='/vendors'><button class="btn btn-primary">Return</button></a>
         </div>
     </div>
   </body>

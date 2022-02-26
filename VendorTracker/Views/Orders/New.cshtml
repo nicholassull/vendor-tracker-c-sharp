@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vendor Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    @using VendorTracker.Models
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create Order</h1>
+      <h3>Vendor: @Model.Name</h3>
+      <div class="text-center m-4">
+        <p>Fill out the form below to add a new order to your tracker.</p>
+      </div>
+      <div class="row justify-content-center m-4">
+        <form class="w-50" action="/vendors" method="post">
+          <div class="form-group">
+            <label for="orderTitle">Title</label>
+            <input class="form-control" id="orderTitle" name="orderTitle" type="text">
+          </div>
+          <div class="form-group">
+            <label for="orderDescription">Description</label>
+            <input class="form-control" id="orderDescription"  name="orderDescription" type="text">
+          </div>
+          <div class="form-group">
+            <label for="orderDate">Date</label>
+            <input class="form-control" id="orderDate"  name="orderDate" type="text">
+          </div>
+          <div class="form-group">
+            <label for="orderPrice">Price</label>
+            <input class="form-control" id="orderPrice"  name="orderPrice" type="text">
+          </div>
+          <button type="submit" class="btn btn-primary">Add Order</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
