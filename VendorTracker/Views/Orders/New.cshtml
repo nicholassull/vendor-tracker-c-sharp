@@ -14,7 +14,8 @@
         <p>Fill out the form below to add a new order to your tracker.</p>
       </div>
       <div class="row justify-content-center m-4">
-        <form class="w-50" action="/vendors" method="post">
+        <form class="w-50" action="/vendors/@Model.Id/orders" method="post">
+          <input id="vendorId" name="vendorId" value="@Model.Id" type="hidden">
           <div class="form-group">
             <label for="orderTitle">Title</label>
             <input class="form-control" id="orderTitle" name="orderTitle" type="text">
