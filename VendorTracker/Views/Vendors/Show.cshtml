@@ -12,7 +12,12 @@
       <h1>Vendor Details</h1>
       <h3>Vendor: @Model["vendor"].Name</h3>
       <p>Description: @Model["vendor"].Description</p>
-
+      <div class="m-4">
+        @if (Model["orders"].Count == 0)
+        {
+          <p>You haven't added any orders for this vendor yet. Click the button below to input an order.</p>
+        }
+      </div>
           <div class="row m-4">
             @foreach (Order order in Model["orders"])
             {
