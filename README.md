@@ -32,7 +32,7 @@ _This is a simple C# web application that allows the user to create and store in
 
 ## Known Bugs
 
-* _There is a but that is not allowing users to access the form to create new orders._
+* _There is a bug that is not allowing users to access the form to create new orders._
 
 ## License
 
